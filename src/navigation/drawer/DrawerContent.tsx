@@ -1,10 +1,9 @@
-import global from '../../styles/global';
-import { RouteDrawer } from '../../types/routes';
+import global from 'src/styles/global';
+import { RouteDrawer } from 'src/types/routes';
 import { useEffect, useState } from 'react';
-import DrawerButton from '../../components/DrawerButton';
-import { drawerRoutes } from '../../routes/drawer.routes';
-import ParentDrawerButton from './ParentDrawerButton';
-import { useRouteContext } from '../../hooks/useRouteContext';
+import DrawerChildButton from 'src/components/DrawerButton';
+import { drawerRoutes } from 'src/routes/drawer.routes';
+import { useRouteContext } from 'src/hooks/useRouteContext';
 import LinearGradient from 'react-native-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
 import {
@@ -16,11 +15,12 @@ import {
   TouchableWithoutFeedback,
   View,
 } from 'react-native';
+import DrawerParentButton from 'src/components/DrawerParentButton';
 
 const DrawerContent = () => {
   const navigation = useNavigation<any>();
   const { currentRoute, setCurrentRoute } = useRouteContext();
-  const [activeItems, setActiveItems] = useState<RouteDrawer[]>([]);
+  const [ activeItems, setActiveItems ] = useState<RouteDrawer[]>([]);
 
   useEffect(() => {
     const listOfRoutes = drawerRoutes.filter(element => {
@@ -64,7 +64,7 @@ const DrawerContent = () => {
 
   return (
     <LinearGradient
-      colors={['#FB0362', '#FFC203']}
+      colors={[ '#FB0362', '#FFC203' ]}
       start={{ x: 0, y: 0.1 }}
       end={{ x: 1, y: 0.9 }}
       style={global.flex}
@@ -72,95 +72,79 @@ const DrawerContent = () => {
       <ScrollView>
         <SafeAreaView>
           <View style={styles.logoContainer}>
-            <Image source={require('../../assets/logos/logo.png')} style={styles.logo} />
+            <Image source={require('src/assets/logos/logo.png')} style={styles.logo} />
           </View>
 
           <View style={styles.containerDrawer}>
-            {activeItems[0]?.parent === null ? null : (
-              <TouchableWithoutFeedback onPress={() => returnToPreviousItem(activeItems[0])}>
-                <View
-                  style={{
-                    ...styles.button,
-                    borderBottomColor: 'white',
-                    borderBottomWidth: 0.5,
-                    borderTopColor: 'white',
-                    borderTopWidth: 0.5,
-                    width: '100%',
-                    display: 'flex',
-                    flexDirection: 'row',
-                    alignItems: 'center',
-                  }}
-                >
-                  <Image
-                    source={require('../../assets/icons/arrow-icon.png')}
-                    style={{
-                      transform: [{ rotate: '180deg' }],
-                      width: 10,
-                      height: 10,
-                      marginLeft: 20,
-                      resizeMode: 'contain',
-                    }}
+            {
+              activeItems[ 0 ]?.parent === null
+                ? null
+                : (
+                  <DrawerParentButton
+                    returnToPreviousItem={returnToPreviousItem}
+                    updateItems={updateItems}
+                    item={activeItems[ 0 ]}
+                    isActive={true}
                   />
-                  <Text
-                    style={{
-                      ...styles.textButton,
-                      marginLeft: 20,
-                    }}
-                  >
-                    {activeItems[0]?.parent}
-                  </Text>
-                </View>
-              </TouchableWithoutFeedback>
-            )}
+                )
+            }
 
-            {activeItems[0]?.parent ? (
-              <View
-                style={{
-                  marginHorizontal: 20,
-                  width: '86%',
-                  backgroundColor: '#FAF8F9',
-                }}
-              >
-                {activeItems?.map(child => (
-                  <DrawerButton
-                    item={child}
-                    key={child.key}
-                    onItemPress={onItemPress}
-                    activeItems={activeItems}
-                    isChildren
-                    isActive={currentRoute === child.key}
-                  />
-                ))}
-              </View>
-            ) : (
-              <View style={{ width: '100%' }}>
-                {activeItems?.map(route =>
-                  activeItems[0]?.parent === null ? (
-                    <>
-                      {route.isParent ? (
-                        <ParentDrawerButton
-                          key={route.key}
-                          item={route}
+            {
+              activeItems[ 0 ]?.parent
+                ? (
+                  <View style={styles.containerButtons}>
+                    {
+                      activeItems?.map(child => (
+                        <DrawerChildButton
+                          item={child}
+                          key={child.key}
                           onItemPress={onItemPress}
                           activeItems={activeItems}
+                          isChildren
+                          isActive={currentRoute === child.key}
                         />
-                      ) : (
-                        <DrawerButton
-                          key={route.key}
-                          item={route}
-                          onItemPress={onItemPress}
-                          activeItems={activeItems}
-                        />
-                      )}
-                    </>
-                  ) : null
-                )}
-              </View>
-            )}
+                      ))
+                    }
+                  </View>
+                )
+                : (
+                  <View style={styles.widthFull}>
+                    {
+                      activeItems?.map(route =>
+                        activeItems[ 0 ]?.parent === null
+                        && (
+                          <>
+                            {
+                              route.isParent
+                                ? (
+                                  <DrawerParentButton
+                                    key={route.key}
+                                    returnToPreviousItem={returnToPreviousItem}
+                                    updateItems={updateItems}
+                                    item={route}
+                                    isActive={currentRoute === route.key}
+                                  />
+                                )
+                                : (
+                                  <DrawerChildButton
+                                    key={route.key}
+                                    item={route}
+                                    onItemPress={onItemPress}
+                                    activeItems={activeItems}
+                                  />
+                                )
+                            }
+                          </>
+                        )
+                      )
+                    }
+                  </View>
+                )
+            }
           </View>
 
           <View style={styles.logoUamContainer}>
-            <Image source={require('../../assets/logos/uam.png')} style={styles.uamImage} />
+            <Image source={require('src/assets/logos/uam.png')} style={styles.uamImage} />
           </View>
         </SafeAreaView>
       </ScrollView>
@@ -185,18 +169,6 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     display: 'flex'
   },
-  button: {
-    borderTopColor: 'white',
-    borderTopWidth: 0.5,
-    width: '100%',
-    paddingVertical: 10
-  },
-  textButton: {
-    fontFamily: 'Poppins-Bold',
-    color: 'white',
-    marginLeft: 30,
-    fontSize: 13
-  },
   logoUamContainer: {
     height: 'auto',
     alignItems: 'center'
@@ -205,7 +177,16 @@ const styles = StyleSheet.create({
     width: 250,
     height: 250,
     resizeMode: 'contain'
+  },
+  widthFull: {
+    width: '100%'
+  },
+  containerButtons: {
+    marginHorizontal: 20,
+    width: '86%',
+    backgroundColor: '#FAF8F9'
   }
+
 });
 
 export default DrawerContent;

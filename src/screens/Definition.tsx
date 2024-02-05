@@ -4,7 +4,7 @@ const Definition = () => {
   return (
     <View style={{ flex: 1 }}>
       <ImageBackground
-        source={require('../assets/images/background.jpg')}
+        source={require('src/assets/images/background.jpg')}
         style={styles.container}
       >
         <View style={styles.titleContainer}>

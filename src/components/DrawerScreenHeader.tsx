@@ -27,7 +27,7 @@ const DrawerScreenHeader = () => {
         }}
       >
         <Image
-          source={require('../../assets/icons/back.png')}
+          source={require('src/assets/icons/back.png')}
           style={{
             width: 20,
             height: 20,
@@ -37,7 +37,7 @@ const DrawerScreenHeader = () => {
       </TouchableOpacity>
 
       <Image
-        source={require('../../assets/logos/burns-logo.png')}
+        source={require('src/assets/logos/burns-logo.png')}
         style={{
           width: 90,
           height: 90,
@@ -54,7 +54,7 @@ const DrawerScreenHeader = () => {
         }}
       >
         <Image
-          source={require('../../assets/icons/menu.png')}
+          source={require('src/assets/icons/menu.png')}
           style={{
             width: 25,
             height: 25,

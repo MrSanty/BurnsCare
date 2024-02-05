@@ -1,9 +1,9 @@
-import TypeOfBurns from "../screens/TypeOfBurns/TypeOfBurns";
-import LiquidBurn from "../screens/TypeOfBurns/LiquidBurn";
-import FireBurn from "../screens/TypeOfBurns/FireBurn";
-import ChemicalBurn from "../screens/TypeOfBurns/ChemicalBurn";
-import ElectricalBurn from "../screens/TypeOfBurns/ElectricalBurn";
-import FrozenBurn from "../screens/TypeOfBurns/FrozenBurn";
+import TypeOfBurns from "src/screens/TypeOfBurns/TypeOfBurns";
+import LiquidBurn from "src/screens/TypeOfBurns/LiquidBurn";
+import FireBurn from "src/screens/TypeOfBurns/FireBurn";
+import ChemicalBurn from "src/screens/TypeOfBurns/ChemicalBurn";
+import ElectricalBurn from "src/screens/TypeOfBurns/ElectricalBurn";
+import FrozenBurn from "src/screens/TypeOfBurns/FrozenBurn";
 
 
 export const typesOfBurnsRoutes = [

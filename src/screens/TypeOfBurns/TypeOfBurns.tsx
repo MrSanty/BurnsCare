@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, Image, Pressable } from 'react-native';
-import { typesOfBurnsRoutes } from '../../routes/typesOfBurns.routes';
+import { typesOfBurnsRoutes } from 'src/routes/typesOfBurns.routes';
 import LinearGradient from 'react-native-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
 
@@ -9,7 +9,7 @@ const TypeOfBurns = () => {
   return (
     <View style={styles.container}>
       <Image
-        source={require('../../assets/images/typesImages.png')}
+        source={require('src/assets/images/typesImages.png')}
         style={{
           width: '100%',
           maxHeight: 276,

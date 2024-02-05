@@ -8,11 +8,11 @@ const Introduction = () => {
   return (
     <View style={styles.flexContainer}>
       <ImageBackground
-        source={require('../assets/images/background.jpg')}
+        source={require('src/assets/images/background.jpg')}
         style={styles.container}
       >
         <Image
-          source={require('../assets/logos/burns-care-logo.png')}
+          source={require('src/assets/logos/burns-care-logo.png')}
           style={styles.logoImage}
         />
 

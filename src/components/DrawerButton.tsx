@@ -10,7 +10,7 @@ interface DrawerButtonProps {
   isParent?: boolean
 }
 
-const DrawerButton = ({ item, onItemPress, activeItems, isChildren, isActive }: DrawerButtonProps) => {
+const DrawerChildButton = ({ item, onItemPress, activeItems, isChildren, isActive }: DrawerButtonProps) => {
   const isLastItem = item.title === activeItems[ activeItems.length - 1 ].title
   const textColor = !isActive ? "#2E2F32" : isActive ? "#FB0263" : "white"
 
@@ -59,4 +59,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default DrawerButton;
+export default DrawerChildButton;

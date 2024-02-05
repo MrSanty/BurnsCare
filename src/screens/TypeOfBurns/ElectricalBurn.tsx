@@ -3,7 +3,7 @@ import { Image, StyleSheet, Text, View } from 'react-native';
 const ElectricalBurn = () => {
   return (
     <View style={styles.container}>
-      <Image source={require('../../assets/images/electrical-type.png')} style={styles.image} />
+      <Image source={require('src/assets/images/electrical-type.png')} style={styles.image} />
 
       <View style={styles.textContainer}>
         <View style={styles.contentTitle}>

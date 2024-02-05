@@ -1,7 +1,7 @@
-import { drawerRoutes } from '../../routes/drawer.routes';
+import { drawerRoutes } from 'src/routes/drawer.routes';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import DrawerContent from './DrawerContent';
-import DrawerScreenHeader from './DrawerScreenHeader';
+import DrawerScreenHeader from '../../components/DrawerScreenHeader';
 const { Navigator, Screen } = createDrawerNavigator();
 
 const NavigationDrawer = () => {

@@ -3,7 +3,7 @@ import { Image, StyleSheet, Text, View } from 'react-native';
 const FireBurn = () => {
   return (
     <View style={styles.container}>
-      <Image source={require('../../assets/images/fire-type.png')} style={styles.image} />
+      <Image source={require('src/assets/images/fire-type.png')} style={styles.image} />
 
       <View style={styles.textContainer}>
         <View style={styles.contentTitle}>

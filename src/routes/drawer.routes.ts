@@ -1,13 +1,13 @@
-import Definition from "../screens/Definition";
-import Clasification from "../screens/Clasification";
+import Definition from "src/screens/Definition";
+import Clasification from "src/screens/Clasification";
 /* import InHome from "screens/burnPrevention/InHome";
 import Labor from "screens/burnPrevention/Labor";
 import whatToDo from "screens/WhatToDo";
 import References from "screens/References";
 import PagesOfInterest from "screens/PagesOfInterest";
 import About from "screens/About"; */
-import StackTypeOfBurns from "../navigation/stack/StackTypeOfBurns";  
-import { RouteDrawer } from "../types/routes";
+import StackTypeOfBurns from "src/navigation/stack/StackTypeOfBurns";  
+import { RouteDrawer } from "src/types/routes";
 
 export const drawerRoutes: RouteDrawer[] = [
   {

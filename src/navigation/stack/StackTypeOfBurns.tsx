@@ -1,5 +1,5 @@
-import { typesOfBurnsRoutes } from '../../routes/typesOfBurns.routes';
-import DrawerScreenHeader from '../../navigation/drawer/DrawerScreenHeader';
+import { typesOfBurnsRoutes } from 'src/routes/typesOfBurns.routes';
+import DrawerScreenHeader from 'src/components/DrawerScreenHeader';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
