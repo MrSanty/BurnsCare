@@ -4,7 +4,7 @@ import DrawerContent from './DrawerContent';
 import DrawerScreenHeader from '../../components/DrawerScreenHeader';
 const { Navigator, Screen } = createDrawerNavigator();
 
-const NavigationDrawer = () => {
+const DrawerMenu = () => {
   return (
     <Navigator
       drawerContent={props => <DrawerContent />}
@@ -44,4 +44,4 @@ const NavigationDrawer = () => {
   );
 };
 
-export default NavigationDrawer;
+export default DrawerMenu;

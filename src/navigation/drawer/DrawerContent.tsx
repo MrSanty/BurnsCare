@@ -77,17 +77,36 @@ const DrawerContent = () => {
 
           <View style={styles.containerDrawer}>
             {
-              activeItems[ 0 ]?.parent === null
-                ? null
-                : (
-                  <DrawerParentButton
-                    returnToPreviousItem={returnToPreviousItem}
-                    updateItems={updateItems}
-                    item={activeItems[ 0 ]}
-                    isActive={true}
-                  />
-                )
+              activeItems[ 0 ]?.parent !== null
+              && (
+                <DrawerParentButton
+                  returnToPreviousItem={returnToPreviousItem}
+                  updateItems={updateItems}
+                  item={activeItems[ 0 ]}
+                  isActive={true}
+                />
+              )
             }
+
+            <View style={styles.widthFull}>
+              {
+                activeItems?.map(parent =>
+                  parent.isParent && activeItems[ 0 ]?.parent === null
+                    ? (
+                      <DrawerParentButton
+                        key={parent.key}
+                        returnToPreviousItem={returnToPreviousItem}
+                        updateItems={updateItems}
+                        item={parent}
+                        isActive={false}
+                      />
+                    )
+                    : null
+                )
+              }
+
+            </View>
+
 
             {
               activeItems[ 0 ]?.parent
@@ -115,24 +134,15 @@ const DrawerContent = () => {
                         && (
                           <>
                             {
-                              route.isParent
-                                ? (
-                                  <DrawerParentButton
-                                    key={route.key}
-                                    returnToPreviousItem={returnToPreviousItem}
-                                    updateItems={updateItems}
-                                    item={route}
-                                    isActive={currentRoute === route.key}
-                                  />
-                                )
-                                : (
-                                  <DrawerChildButton
-                                    key={route.key}
-                                    item={route}
-                                    onItemPress={onItemPress}
-                                    activeItems={activeItems}
-                                  />
-                                )
+                              !route.isParent
+                              && (
+                                <DrawerChildButton
+                                  key={route.key}
+                                  item={route}
+                                  onItemPress={onItemPress}
+                                  activeItems={activeItems}
+                                />
+                              )
                             }
                           </>
                         )

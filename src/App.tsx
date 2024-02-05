@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import 'react-native-gesture-handler';
 import SplashScreen from 'react-native-splash-screen';
 import Introduction from './screens/Introduction';
-import NavigationDrawer from './navigation/drawer/NavigationDrawer';
+import DrawerMenu from './navigation/drawer/DrawerMenu';
 import { RouteContext } from './context/RouteProvider';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -28,7 +28,7 @@ const App = () => {
           }}
         >
           <Screen name="Introduction" component={Introduction} />
-          <Screen name="Main" component={NavigationDrawer} />
+          <Screen name="Main" component={DrawerMenu} />
         </Navigator>
       </NavigationContainer>
     </RouteContext.Provider>

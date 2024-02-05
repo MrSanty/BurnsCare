@@ -1,5 +1,7 @@
 import { RouteDrawer } from "src/types/routes";
-import { Image, StyleSheet, Text, TouchableWithoutFeedback, View } from "react-native";
+import { StyleSheet, Text, TouchableWithoutFeedback, View } from "react-native";
+import Animated, { useAnimatedStyle, useSharedValue, withTiming } from "react-native-reanimated";
+import { useEffect } from "react";
 
 interface DrawerParentButtonProps {
   returnToPreviousItem: (item: RouteDrawer) => void;
@@ -9,6 +11,17 @@ interface DrawerParentButtonProps {
 }
 
 const DrawerParentButton = ({ returnToPreviousItem, updateItems, item, isActive }: DrawerParentButtonProps) => {
+  const rotation = useSharedValue(0);
+  const animatedStyle = useAnimatedStyle(() => {
+    return {
+      transform: [{ rotate: `${rotation.value}deg` }],
+    };
+  });
+
+  useEffect(() => {
+    rotation.value = withTiming(isActive ? 180 : 0, { duration: 200 });
+  }, []);
+
 
   const handlePress = () => {
     if (isActive) {
@@ -25,9 +38,9 @@ const DrawerParentButton = ({ returnToPreviousItem, updateItems, item, isActive 
       <View
         style={styles.button}
       >
-        <Image
+        <Animated.Image
           source={require('src/assets/icons/arrow-icon.png')}
-          style={[ styles.iconArrow, isActive && styles.iconArrowActive ]}
+          style={[ styles.iconArrow, animatedStyle ]}
         />
         <Text
           style={styles.textButton}
@@ -54,9 +67,6 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center'
-  },
-  iconArrowActive: {
-    transform: [{ rotate: '180deg' }]
   },
   iconArrow: {
     width: 10,
