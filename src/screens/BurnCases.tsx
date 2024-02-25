@@ -40,7 +40,7 @@ const BurnCases: FC<Props> = ({ navigation }) => {
             <AccordionText
               title="Contacto"
               text="Lesión por contacto con objetos sólidos calientes o fríos como metales, vidrio, entre otros."
-              maxHeigth={40}
+              maxHeigth={60}
             />
             <AccordionText
               title="Fuego"
@@ -60,7 +60,7 @@ const BurnCases: FC<Props> = ({ navigation }) => {
             <AccordionText
               title="Radiación"
               text="Proveniente de radiografías, luz solar y otras fuentes de radiación ultravioleta, como una cama solar"
-              maxHeigth={40}
+              maxHeigth={60}
             />
             <AccordionText
               title="Maltrato"

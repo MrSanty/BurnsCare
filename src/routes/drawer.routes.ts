@@ -5,6 +5,8 @@ import References from "src/screens/References";
 import InterestedPage from "src/screens/InterestedPage";
 import BurnCases from "src/screens/BurnCases";
 import TherapeuticExercise from "src/screens/TherapeuticExercise";
+import ScarManage from "src/screens/ScarManage";
+import PainManage from "src/screens/PainManage";
 
 export const drawerRoutes: RouteDrawer[] = [
   {
@@ -101,6 +103,18 @@ export const drawerScreenRoutes: RouteDrwerScreen[] = [
     key: 6,
     title: 'Ejercicio terapéutico',
     component: TherapeuticExercise,
+    showHeader: true
+  },
+  {
+    key: 7,
+    title: 'Manejo de la cicatriz',
+    component: ScarManage,
+    showHeader: true
+  },
+  {
+    key: 8,
+    title: 'Manejo del dolor',
+    component: PainManage,
     showHeader: true
   },
   {
