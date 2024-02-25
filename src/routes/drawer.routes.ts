@@ -62,6 +62,12 @@ export const drawerRoutes: RouteDrawer[] = [
     show: true
   },
   {
+    key: 9,
+    title: 'Examen',
+    children: null,
+    show: true
+  },
+  {
     key: 10,
     title: 'Referencias',
     children: null,

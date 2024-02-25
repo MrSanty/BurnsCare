@@ -1,7 +1,6 @@
 import { FC } from "react";
 import { ImageBackground, StyleSheet, Text, View } from 'react-native';
 import { ScrollView } from "react-native-gesture-handler";
-import AccordionText from "src/components/AccordionText";
 import { useNavigationChange } from 'src/hooks/useNavigationChange';
 
 interface Props {
@@ -27,31 +26,23 @@ const PainManage: FC<Props> = ({ navigation }) => {
               showsVerticalScrollIndicator={false}
               style={styles.scroll}
             >
-              <AccordionText
-                title="Medios físicos"
-                text={
-                  [
-                    "● Técnicas de relajación.",
-                    "● Musicoterapia.",
-                    "● Fisioterapia dermatofuncional: Masaje cicatricial con diferentes modalidades",
-                    "● Crioterapia: Fase aguda de la quemadura donde existe inflamación y dolor. Máximo 20 min.",
-                    "● Termoterapia superficial: Fase subaguda. Paquete Caliente por 15 min. Tolerable al paciente."
-                  ].join('\n')
-                }
-                maxHeigth={120}
-                isAllwaysActive={true}
-              />
-              <AccordionText
-                title="Electroterapia"
-                text={
-                  [
-                    "estimulación eléctrica nerviosa transcutánea (TENS).",
-                    "El uso de la TENS puede contribuir con el manejo del dolor en personas quemadas, se puede usar la estimulación eléctrica en el dolor agudo a nivel sensorial, en tanto actúa sobre la transmisión en la médula espinal, y por su efecto en la estimulación de la liberación de endorfinas en el tratamiento del dolor crónico.cuyos efectos y aplicaciones clínicas dependerán de la forma de la onda, la amplitud, la frecuencia, duración del pulso y tiempo de aplicación."
-                  ].join('\n\n')
-                }
-                maxHeigth={200}
-                isAllwaysActive={true}
-              />
+              <View style={styles.card}>
+                <Text style={styles.cardTitle}>Medios físicos</Text>
+                <Text style={styles.cardText}>
+                  ● Técnicas de relajación.{"\n"}
+                  ● Musicoterapia.{"\n"}
+                  ● Fisioterapia dermatofuncional: Masaje cicatricial con diferentes modalidades.{"\n"}
+                  ● Crioterapia: Fase aguda de la quemadura donde existe inflamación y dolor. Máximo 20 min.{"\n"}
+                  ● Termoterapia superficial: Fase subaguda. Paquete Caliente por 15 min. Tolerable al paciente.
+                </Text>
+              </View>
+              <View style={styles.card}>
+                <Text style={styles.cardTitle}>Electroterapia</Text>
+                <Text style={styles.cardText}>
+                  Estimulación eléctrica nerviosa transcutánea (TENS).{"\n"}
+                  El uso de la TENS puede contribuir con el manejo del dolor en personas quemadas, se puede usar la estimulación eléctrica en el dolor agudo a nivel sensorial, en tanto actúa sobre la transmisión en la médula espinal, y por su efecto en la estimulación de la liberación de endorfinas en el tratamiento del dolor crónico.cuyos efectos y aplicaciones clínicas dependerán de la forma de la onda, la amplitud, la frecuencia, duración del pulso y tiempo de aplicación.
+                </Text>
+              </View>
             </ScrollView>
           </View>
         </View>
@@ -87,7 +78,26 @@ const styles = StyleSheet.create({
   },
   scroll: {
     width: '100%',
-    maxHeight: '100%'
+    maxHeight: '96%'
+  },
+  card: {
+    backgroundColor: '#FFF',
+    borderRadius: 10,
+    padding: 15,
+    borderWidth: 1,
+    borderColor: 'rgba(0, 0, 0, 0.4)',
+    marginBottom: 20
+  },
+  cardTitle: {
+    fontFamily: 'Poppins-Bold',
+    fontSize: 18,
+    color: '#FB0263',
+    marginBottom: 10
+  },
+  cardText: {
+    fontFamily: 'Poppins-Regular',
+    fontSize: 17,
+    color: '#2E2F32'
   }
 })
 

@@ -1,7 +1,6 @@
 import { FC } from "react";
 import { ImageBackground, StyleSheet, Text, View } from 'react-native';
 import { ScrollView } from "react-native-gesture-handler";
-import AccordionText from "src/components/AccordionText";
 import { useNavigationChange } from 'src/hooks/useNavigationChange';
 
 interface Props {
@@ -22,31 +21,31 @@ const TherapeuticExercise: FC<Props> = ({ navigation }) => {
           <Text style={styles.title}>TERAPÉUTICO</Text>
         </View>
         <View style={styles.contentContainer}>
-        <View style={styles.scroll}>
-          <ScrollView
-            showsVerticalScrollIndicator={false}
-            style={styles.scroll}
-          >
-            <AccordionText
-              title="Introducción"
-              text="Se sugiere un entrenamiento moderado de la fuerza muscular, evitando cargas elevadas, por la sensibilidad de las estructuras articulares especialmente durante la primera fase de recuperación."
-              maxHeigth={100}
-              isAllwaysActive={true}
-            />
-            <AccordionText
-              title="Ejercicio de fortalecimiento"
-              text="Los ejercicios de fortalecimiento son conocidos en el área de fisioterapia por hacerse por medio de actividades motoras siendo su finalidad el incremento de la fuerza de los músculos, estos se pueden hacer por medio de diferentes aparatos."
-              maxHeigth={120}
-              isAllwaysActive={true}
-            />
-            <AccordionText
-              title="Ejercicio de estiramiento"
-              text="Los ejercicios de estiramiento muscular son técnicas fundamentales en los programas de rehabilitación en el área de fisioterapia, teniendo como beneficio a los pacientes la amplitud de movimiento articular, disminución del tono muscular y la prevención de lesiones musculares al momento de realizar la terapia, se realizan haciendo elongaciones de los músculos y de los tendones."
-              maxHeigth={180}
-              isAllwaysActive={true}
-            />
-          </ScrollView>
-        </View>
+          <View style={styles.scroll}>
+            <ScrollView
+              showsVerticalScrollIndicator={false}
+              style={styles.scroll}
+            >
+              <View style={styles.card}>
+                <Text style={styles.cardTitle}>Introducción</Text>
+                <Text style={styles.cardText}>
+                  Se sugiere un entrenamiento moderado de la fuerza muscular, evitando cargas elevadas, por la sensibilidad de las estructuras articulares especialmente durante la primera fase de recuperación.
+                </Text>
+              </View>
+              <View style={styles.card}>
+                <Text style={styles.cardTitle}>Ejercicio de fortalecimiento</Text>
+                <Text style={styles.cardText}>
+                  Los ejercicios de fortalecimiento son conocidos en el área de fisioterapia por hacerse por medio de actividades motoras siendo su finalidad el incremento de la fuerza de los músculos, estos se pueden hacer por medio de diferentes aparatos.
+                </Text>
+              </View>
+              <View style={styles.card}>
+                <Text style={styles.cardTitle}>Ejercicio de estiramiento</Text>
+                <Text style={styles.cardText}>
+                  Los ejercicios de estiramiento muscular son técnicas fundamentales en los programas de rehabilitación en el área de fisioterapia, teniendo como beneficio a los pacientes la amplitud de movimiento articular, disminución del tono muscular y la prevención de lesiones musculares al momento de realizar la terapia, se realizan haciendo elongaciones de los músculos y de los tendones.
+                </Text>
+              </View>
+            </ScrollView>
+          </View>
         </View>
       </ImageBackground>
     </View>
@@ -80,7 +79,26 @@ const styles = StyleSheet.create({
   },
   scroll: {
     width: '100%',
-    maxHeight: '100%'
+    maxHeight: '96%'
+  },
+  card: {
+    backgroundColor: '#FFF',
+    borderRadius: 10,
+    padding: 15,
+    borderWidth: 1,
+    borderColor: 'rgba(0, 0, 0, 0.4)',
+    marginBottom: 20
+  },
+  cardTitle: {
+    fontFamily: 'Poppins-Bold',
+    fontSize: 18,
+    color: '#FB0263',
+    marginBottom: 10
+  },
+  cardText: {
+    fontFamily: 'Poppins-Regular',
+    fontSize: 17,
+    color: '#2E2F32'
   }
 })
 
