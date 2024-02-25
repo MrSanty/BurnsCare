@@ -8,6 +8,7 @@ import TherapeuticExercise from "src/screens/TherapeuticExercise";
 import ScarManage from "src/screens/ScarManage";
 import PainManage from "src/screens/PainManage";
 import AboutUs from "src/screens/AboutUs";
+import Exam from "src/screens/Exam";
 
 export const drawerRoutes: RouteDrawer[] = [
   {
@@ -127,7 +128,7 @@ export const drawerScreenRoutes: RouteDrwerScreen[] = [
   {
     key: 9,
     title: 'Examen',
-    component: PainManage,
+    component: Exam,
     showHeader: true
   },
   {
