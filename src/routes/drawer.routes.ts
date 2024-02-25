@@ -125,6 +125,12 @@ export const drawerScreenRoutes: RouteDrwerScreen[] = [
     showHeader: true
   },
   {
+    key: 9,
+    title: 'Examen',
+    component: PainManage,
+    showHeader: true
+  },
+  {
     key: 10,
     title: 'Referencias',
     component: References,
