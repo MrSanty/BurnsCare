@@ -7,6 +7,7 @@ import BurnCases from "src/screens/BurnCases";
 import TherapeuticExercise from "src/screens/TherapeuticExercise";
 import ScarManage from "src/screens/ScarManage";
 import PainManage from "src/screens/PainManage";
+import AboutUs from "src/screens/AboutUs";
 
 export const drawerRoutes: RouteDrawer[] = [
   {
@@ -132,7 +133,7 @@ export const drawerScreenRoutes: RouteDrwerScreen[] = [
   {
     key: 12,
     title: 'Acerca de',
-    component: Clasification,
+    component: AboutUs,
     showHeader: true
   }
 ]
