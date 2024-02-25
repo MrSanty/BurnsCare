@@ -1,109 +1,124 @@
 import Definition from "src/screens/Definition";
-import Clasification from "src/screens/Clasification";
-/* import InHome from "screens/burnPrevention/InHome";
-import Labor from "screens/burnPrevention/Labor";
-import whatToDo from "screens/WhatToDo";
-import References from "screens/References";
-import PagesOfInterest from "screens/PagesOfInterest";
-import About from "screens/About"; */
-import StackTypeOfBurns from "src/navigation/stack/StackTypeOfBurns";  
-import { RouteDrawer } from "src/types/routes";
+import Clasification from "src/screens/Clasification/Clasification";
+import { RouteDrawer, RouteDrwerScreen } from "src/types/routes";
+import References from "src/screens/References";
+import InterestedPage from "src/screens/InterestedPage";
+import BurnCases from "src/screens/BurnCases";
+import TherapeuticExercise from "src/screens/TherapeuticExercise";
 
 export const drawerRoutes: RouteDrawer[] = [
   {
-    key: 'Home',
+    key: 1,
     title: 'Inicio',
-    component: null,
-    parent: null,
-    isParent: true,
-    showHeader: true
+    children: [
+      {
+        key: 2,
+        title: 'Definición',
+        children: null,
+        show: true
+      },
+      {
+        key: 4,
+        title: 'Clasificación',
+        children: null,
+        show: true
+      },
+      {
+        key: 5,
+        title: 'Causas de las quemaduras',
+        children: null,
+        show: true
+      }
+    ],
+    show: true,
+    
   },
   {
-    key: 'Definition',
+    key: 3,
+    title: 'Pautas de intervención',
+    children: [
+      {
+        key: 6,
+        title: 'Ejercicio terapéutico',
+        children: null,
+        show: true
+      },
+      {
+        key: 7,
+        title: 'Manejo de la cicatriz',
+        children: null,
+        show: true
+      },
+      {
+        key: 8,
+        title: 'Manejo del dolor',
+        children: null,
+        show: true
+      }
+    ],
+    show: true
+  },
+  {
+    key: 10,
+    title: 'Referencias',
+    children: null,
+    show: true
+  },
+  {
+    key: 11,
+    title: 'Páginas de interés',
+    children: null,
+    show: true
+  },
+  {
+    key: 12,
+    title: 'Acerca de',
+    children: null,
+    show: true
+  }
+]
+
+export const drawerScreenRoutes: RouteDrwerScreen[] = [
+  {
+    key: 2,
     title: 'Definición',
     component: Definition,
-    parent: 'Inicio',
-    isParent: false,
     showHeader: true
   },
   {
-    key: 'TypeOfBurns',
-    title: 'Tipos de quemaduras',
-    component: StackTypeOfBurns,
-    parent: 'Inicio',
-    isParent: false,
-    showHeader: false
-  },
-  {
-    key: 'Clasification',
+    key: 4,
     title: 'Clasificación',
     component: Clasification,
-    parent: 'Inicio',
-    isParent: false,
     showHeader: true
   },
   {
-    key: 'Complications',
-    title: 'Complicaciones',
-    component: null,
-    parent: 'Inicio',
-    isParent: false,
+    key: 5,
+    title: 'Causas de las quemaduras',
+    component: BurnCases,
     showHeader: true
   },
   {
-    key: 'Prevention',
-    title: 'Prevención de la quemadura',
-    component: null,
-    parent: null,
-    isParent: true,
+    key: 6,
+    title: 'Ejercicio terapéutico',
+    component: TherapeuticExercise,
     showHeader: true
   },
   {
-    key: 'InHome',
-    title: 'Hogar',
-    component: null,
-    parent: 'Prevención de la quemadura',
-    isParent: false,
-    showHeader: true
-  },
-  {
-    key: 'Labor',
-    title: 'Laboral',
-    component: null,
-    parent: 'Prevención de la quemadura',
-    isParent: false,
-    showHeader: true
-  },
-  {
-    key: 'WhatToDo',
-    title: '¿Qué hacer en caso de quemadura?',
-    component: null,
-    parent: null,
-    isParent: false,
-    showHeader: true
-  },
-  {
-    key: 'References',
+    key: 10,
     title: 'Referencias',
-    component: null,
-    parent: null,
-    isParent: false,
+    component: References,
     showHeader: true
   },
   {
-    key: 'PagesOfInterest',
+    key: 11,
     title: 'Páginas de interés',
-    component: null,
-    parent: null,
-    isParent: false,
+    component: InterestedPage,
     showHeader: true
   },
   {
-    key: 'About',
+    key: 12,
     title: 'Acerca de',
-    component: null,
-    parent: null,
-    isParent: false,
+    component: Clasification,
     showHeader: true
   }
 ]
