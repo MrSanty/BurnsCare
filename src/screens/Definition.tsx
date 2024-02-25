@@ -1,8 +1,16 @@
+import { FC } from "react";
 import { ImageBackground, StyleSheet, Text, View } from 'react-native';
+import { useNavigationChange } from 'src/hooks/useNavigationChange';
 
-const Definition = () => {
+interface Props {
+  navigation: any;
+}
+
+const Definition: FC<Props> = ({ navigation }) => {
+  useNavigationChange(navigation, 2);
+
   return (
-    <View style={{ flex: 1 }}>
+    <View style={styles.container}>
       <ImageBackground
         source={require('src/assets/images/background.jpg')}
         style={styles.container}
@@ -17,11 +25,13 @@ const Definition = () => {
             ser causada por diferentes agentes como productos químicos, líquidos y sólidos calientes
             o aquellos agentes que producen llamas.
           </Text>
+          
           <Text style={styles.contentText}>
             Se entiende por quemadura un conjunto de fenómenos locales y sistémicos que resultan de
             la acción de muy alta temperatura, electricidad o algunos agentes químicos, así como por
             agentes fríos.
           </Text>
+
           <Text style={styles.contentText}>
             Las quemaduras se pueden producir en cualquier lugar del organismo, pero son mucho más
             frecuentes en la piel pudiendo incluir los tejidos adyacentes, ocasionando un
@@ -31,33 +41,35 @@ const Definition = () => {
         </View>
       </ImageBackground>
     </View>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   titleContainer: {
     alignItems: 'center',
-    marginVertical: 20,
+    marginBottom: 30
   },
   title: {
     fontFamily: 'Poppins-Bold',
     fontSize: 22,
     textAlign: 'center',
-    color: '#FB0263',
+    color: '#FB0263'
   },
   contentContainer: {
-    paddingHorizontal: 25,
+    paddingHorizontal: 25
   },
   contentText: {
     fontFamily: 'Poppins-Regular',
     fontSize: 17,
     textAlign: 'justify',
     color: '#2E2F32',
-    marginBottom: 20,
-  },
-});
+    marginBottom: 20
+  }
+})
 
 export default Definition;
