@@ -6,13 +6,14 @@ interface Props {
   navigation: any;
 }
 
-const Exam: FC<Props> = ({ navigation }) => {
-  useNavigationChange(navigation, 9);
+const ControlMonitoring: FC<Props> = ({ navigation }) => {
+  useNavigationChange(navigation, 3);
 
   return (
     <View style={styles.container}>
       <View style={styles.titleContainer}>
-        <Text style={styles.title}>EXAMEN</Text>
+        <Text style={styles.title}>CONTROL</Text>
+        <Text style={styles.title}>Y SEGUIMIENTO</Text>
       </View>
     </View>
   )
@@ -33,6 +34,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#FB0263'
   }
-})
+}) 
 
-export default Exam
+export default ControlMonitoring

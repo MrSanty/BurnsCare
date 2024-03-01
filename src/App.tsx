@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import 'react-native-gesture-handler';
 import SplashScreen from 'react-native-splash-screen';
-import Introduction from './screens/Introduction';
-import DrawerMenu from './navigation/drawer/DrawerMenu';
-import { RouteContext } from './context/RouteProvider';
+import Introduction from 'src/screens/Introduction';
+import DrawerMenu from 'src/navigation/drawer/DrawerMenu';
+import { RouteContext } from 'src/context/RouteProvider';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -16,7 +16,7 @@ const App = () => {
     setTimeout(() => {
       SplashScreen.hide();
     }, 500);
-  });
+  }, []);
 
   return (
     <RouteContext.Provider value={{ currentRoute, setCurrentRoute }}>

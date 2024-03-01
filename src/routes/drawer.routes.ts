@@ -1,70 +1,29 @@
 import Definition from "src/screens/Definition";
-import Clasification from "src/screens/Clasification/Clasification";
 import { RouteDrawer, RouteDrwerScreen } from "src/types/routes";
+import Complications from "src/screens/Complications";
 import References from "src/screens/References";
 import InterestedPage from "src/screens/InterestedPage";
-import BurnCases from "src/screens/BurnCases";
-import TherapeuticExercise from "src/screens/TherapeuticExercise";
-import ScarManage from "src/screens/ScarManage";
-import PainManage from "src/screens/PainManage";
 import AboutUs from "src/screens/AboutUs";
-import Exam from "src/screens/Exam";
+import StackRecommendation from "src/navigation/stack/StackRecommendation";
+import ControlMonitoring from "src/screens/ControlMonitoring";
 
 export const drawerRoutes: RouteDrawer[] = [
   {
     key: 1,
     title: 'Inicio',
-    children: [
-      {
-        key: 2,
-        title: 'Definición',
-        children: null,
-        show: true
-      },
-      {
-        key: 4,
-        title: 'Clasificación',
-        children: null,
-        show: true
-      },
-      {
-        key: 5,
-        title: 'Causas de las quemaduras',
-        children: null,
-        show: true
-      }
-    ],
+    children: null,
     show: true,
     
   },
   {
-    key: 3,
-    title: 'Pautas de intervención',
-    children: [
-      {
-        key: 6,
-        title: 'Ejercicio terapéutico',
-        children: null,
-        show: true
-      },
-      {
-        key: 7,
-        title: 'Manejo de la cicatriz',
-        children: null,
-        show: true
-      },
-      {
-        key: 8,
-        title: 'Manejo del dolor',
-        children: null,
-        show: true
-      }
-    ],
+    key: 2,
+    title: 'Complicaciones de las quemaduras',
+    children: null,
     show: true
   },
   {
-    key: 9,
-    title: 'Examen',
+    key: 3,
+    title: 'Control y seguimiento',
     children: null,
     show: true
   },
@@ -90,45 +49,27 @@ export const drawerRoutes: RouteDrawer[] = [
 
 export const drawerScreenRoutes: RouteDrwerScreen[] = [
   {
-    key: 2,
-    title: 'Definición',
+    key: 1,
+    title: 'Inicio',
     component: Definition,
     showHeader: true
   },
   {
-    key: 4,
-    title: 'Clasificación',
-    component: Clasification,
-    showHeader: true
-  },
-  {
     key: 5,
-    title: 'Causas de las quemaduras',
-    component: BurnCases,
+    title: 'Complicaciones de las quemaduras',
+    component: Complications,
     showHeader: true
   },
   {
     key: 6,
-    title: 'Ejercicio terapéutico',
-    component: TherapeuticExercise,
-    showHeader: true
+    title: 'Recomendaciones',
+    component: StackRecommendation,
+    showHeader: false
   },
   {
-    key: 7,
-    title: 'Manejo de la cicatriz',
-    component: ScarManage,
-    showHeader: true
-  },
-  {
-    key: 8,
-    title: 'Manejo del dolor',
-    component: PainManage,
-    showHeader: true
-  },
-  {
-    key: 9,
-    title: 'Examen',
-    component: Exam,
+    key: 3,
+    title: 'Control y seguimiento',
+    component: ControlMonitoring,
     showHeader: true
   },
   {
