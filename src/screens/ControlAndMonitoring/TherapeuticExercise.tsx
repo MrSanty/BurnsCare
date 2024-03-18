@@ -7,7 +7,7 @@ interface Props {
   navigation: any;
 }
 
-const ScarManage: FC<Props> = ({ navigation }) => {
+const TherapeuticExercise: FC<Props> = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -25,15 +25,21 @@ const ScarManage: FC<Props> = ({ navigation }) => {
               style={styles.scroll}
             >
               <View style={styles.card}>
-                <Text style={styles.cardTitle}>Tecnicas dermato funcionales</Text>
+                <Text style={styles.cardTitle}>Introducción</Text>
                 <Text style={styles.cardText}>
-                  El entrenamiento funcional se basa en ejercicios para mejorar la salud y el bienestar general del individuo, estos ejercicios se adaptan en habilidades naturales para trabajar diferentes organismos y sistemas, se busca sacar el máximo provecho del cuerpo y sus movimientos en diferentes actividades.
+                  Se sugiere un entrenamiento moderado de la fuerza muscular, evitando cargas elevadas, por la sensibilidad de las estructuras articulares especialmente durante la primera fase de recuperación.
                 </Text>
               </View>
               <View style={styles.card}>
-                <Text style={styles.cardTitle}>Preso-terapia</Text>
+                <Text style={styles.cardTitle}>Ejercicio de fortalecimiento</Text>
                 <Text style={styles.cardText}>
-                  Consiste en la aplicación de una fuerza mecánica de aproximadamente 25 mm Hg a 40 mm de Hg mantenida sobre la cicatriz o injerto, al cual se opone la fuerza de los tejidos profundos a través de la aplicación de elementos rígidos y elásticos compresivos como trajes y vendajes; elementos semirrígidos como bandas de silicona y elementos rígidos como material plástico; se usan además esteroides tópicos, parches de poliuretanos y moldes acrílicos. Generalmente es utilizada en personas cuya cicatriz demora más de 14 días promedio para iniciar el proceso de epitelización, o en aquellas personas que requieren injertos con el fin de facilitar la remodelación y organización del tejido colágeno.
+                  Los ejercicios de fortalecimiento son conocidos en el área de fisioterapia por hacerse por medio de actividades motoras siendo su finalidad el incremento de la fuerza de los músculos, estos se pueden hacer por medio de diferentes aparatos.
+                </Text>
+              </View>
+              <View style={styles.card}>
+                <Text style={styles.cardTitle}>Ejercicio de estiramiento</Text>
+                <Text style={styles.cardText}>
+                  Los ejercicios de estiramiento muscular son técnicas fundamentales en los programas de rehabilitación en el área de fisioterapia, teniendo como beneficio a los pacientes la amplitud de movimiento articular y la prevención de lesiones musculares al momento de realizar la terapia, se realizarán haciendo elongaciones de los músculos y de los tendones.
                 </Text>
               </View>
             </ScrollView>
@@ -94,4 +100,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default ScarManage;
+export default TherapeuticExercise;

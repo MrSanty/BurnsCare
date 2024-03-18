@@ -4,8 +4,7 @@ import Complications from "src/screens/Complications";
 import References from "src/screens/References";
 import InterestedPage from "src/screens/InterestedPage";
 import AboutUs from "src/screens/AboutUs";
-import StackRecommendation from "src/navigation/stack/StackRecommendation";
-import ControlMonitoring from "src/screens/ControlMonitoring";
+import StackControlMonitoring from "src/navigation/stack/StackControlMonitoring";
 
 export const drawerRoutes: RouteDrawer[] = [
   {
@@ -61,16 +60,10 @@ export const drawerScreenRoutes: RouteDrwerScreen[] = [
     showHeader: true
   },
   {
-    key: 6,
-    title: 'Recomendaciones',
-    component: StackRecommendation,
-    showHeader: false
-  },
-  {
     key: 3,
     title: 'Control y seguimiento',
-    component: ControlMonitoring,
-    showHeader: true
+    component: StackControlMonitoring,
+    showHeader: false
   },
   {
     key: 10,

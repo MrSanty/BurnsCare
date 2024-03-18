@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { View, Text, StyleSheet, Image, Pressable } from 'react-native';
-import { RecommendationsRoutes } from 'src/routes/Recommendations.routes';
+import { ControlMonitoringRoutes } from 'src/routes/ControlMonitoring.routes';
 import { useNavigationChange } from 'src/hooks/useNavigationChange';
 import ButtonGradient from "src/components/ButtonGradient";
 
@@ -8,7 +8,8 @@ interface TypeOfBurnsProps {
   navigation: any;
 }
 
-const Recommendations: FC<TypeOfBurnsProps> = ({ navigation }) => {
+const ControlMonitoring: FC<TypeOfBurnsProps> = ({ navigation }) => {
+  useNavigationChange(navigation, 3);
 
   return (
     <View style={styles.container}>
@@ -27,7 +28,7 @@ const Recommendations: FC<TypeOfBurnsProps> = ({ navigation }) => {
         </View>
         <View style={styles.contentContainer}>
           {
-            RecommendationsRoutes.slice(1).map(route => (
+            ControlMonitoringRoutes.slice(1).map(route => (
               <ButtonGradient
                 key={route.key}
                 text={route.title}
@@ -83,4 +84,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Recommendations;
+export default ControlMonitoring;

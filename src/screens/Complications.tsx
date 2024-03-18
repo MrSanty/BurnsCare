@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useNavigationChange } from 'src/hooks/useNavigationChange';
 import LinearGradient from "react-native-linear-gradient";
 import ComplicationItem from "src/components/ComplicationItem";
@@ -49,30 +49,6 @@ const Complications: FC<Props> = ({ navigation }) => {
               secondContent="Las secuelas estéticas de las quemaduras, además de estar asociadas con las secuelas funcionales, llevan a la persona a aislamiento debido al miedo o al rechazo y a los problemas psicológicos y emocionales derivados de esta lesión."
               maxHeigth={200}
             />
-            <Pressable
-              onPress={() => navigation.navigate('Recomendaciones')}
-              style={({ pressed }) => [
-                styles.pressableButton,
-                {
-                  backgroundColor: pressed ? '#fff':'transparent',
-                  borderColor: '#FFF',
-                  borderWidth: 1
-                }
-              ]}
-            >
-              {({ pressed }) => (
-                <>
-                  <Text
-                    style={{
-                      color: pressed ? '#2E2F32' : '#fff',
-                      ...styles.contentText,
-                    }}
-                  >
-                    Recomendaciones
-                  </Text>
-                </>
-              )}
-            </Pressable>
           </ScrollView>
         </View>
       </LinearGradient>

@@ -1,11 +1,11 @@
-import { RecommendationsRoutes } from 'src/routes/Recommendations.routes';
+import { ControlMonitoringRoutes } from 'src/routes/ControlMonitoring.routes';
 import DrawerScreenHeader from 'src/components/DrawerScreenHeader';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
-const StackRecommendation = () => {
+const StackControlMonitoring = () => {
   return (
     <Navigator
       screenOptions={{
@@ -14,7 +14,7 @@ const StackRecommendation = () => {
       initialRouteName="Index"
     >
       {
-        RecommendationsRoutes.map((route) => (
+        ControlMonitoringRoutes.map((route) => (
           <Screen
             key={route.key}
             name={route.title}
@@ -25,4 +25,4 @@ const StackRecommendation = () => {
     </Navigator>
   );
 };
-export default StackRecommendation;
+export default StackControlMonitoring;

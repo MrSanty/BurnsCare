@@ -15,8 +15,8 @@ const PainManage: FC<Props> = ({ navigation }) => {
         style={styles.container}
       >
         <View style={styles.titleContainer}>
-          <Text style={styles.title}>EJERCICIO</Text>
-          <Text style={styles.title}>TERAPÉUTICO</Text>
+          <Text style={styles.title}>MANEJO</Text>
+          <Text style={styles.title}>DEL DOLOR</Text>
         </View>
         <View style={styles.contentContainer}>
           <View style={styles.scroll}>
@@ -30,7 +30,7 @@ const PainManage: FC<Props> = ({ navigation }) => {
                   ● Técnicas de relajación.{"\n"}
                   ● Musicoterapia.{"\n"}
                   ● Fisioterapia dermatofuncional: Masaje cicatricial con diferentes modalidades.{"\n"}
-                  ● Crioterapia: Fase aguda de la quemadura donde existe inflamación y dolor. Máximo 20 min.{"\n"}
+                  ● Crioterapia: Fase aguda de la quemadura donde existe inflamación y dolor. Máximo 20 min, en áreas aledañas al área lesionada{"\n"}
                   ● Termoterapia superficial: Fase subaguda. Paquete Caliente por 15 min. Tolerable al paciente.
                 </Text>
               </View>

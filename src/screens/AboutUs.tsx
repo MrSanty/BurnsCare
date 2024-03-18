@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native';
+import { ImageBackground, StyleSheet, Text, View } from 'react-native';
 import { ScrollView } from "react-native-gesture-handler";
 import CardUser from "src/components/CardUser";
 import { useNavigationChange } from 'src/hooks/useNavigationChange';
@@ -31,10 +31,7 @@ const AboutUs: FC<Props> = ({ navigation }) => {
             <Text style={styles.title}>DESARROLLADORES</Text>
           </View>
           <View style={styles.contentContainer}>
-            <CardUser name="Yaneth Mejía Rendón" />
             <CardUser name="Carlos Andrés Zapata" />
-            <CardUser name="Juan Camilo Uribe Villa" />
-            <CardUser name="Daniel Gutiérrez Duque" />
             <CardUser name="Santiago Quintero Rodriguez" />
           </View>
         </ScrollView>
