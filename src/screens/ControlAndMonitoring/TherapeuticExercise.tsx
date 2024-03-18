@@ -1,7 +1,8 @@
 import { FC } from "react";
 import { ImageBackground, StyleSheet, Text, View } from 'react-native';
 import { ScrollView } from "react-native-gesture-handler";
-import { useNavigationChange } from 'src/hooks/useNavigationChange';
+import ButtonGradient from "src/components/ButtonGradient";
+import Card from "src/components/Card";
 
 interface Props {
   navigation: any;
@@ -19,31 +20,36 @@ const TherapeuticExercise: FC<Props> = ({ navigation }) => {
           <Text style={styles.title}>TERAPÉUTICO</Text>
         </View>
         <View style={styles.contentContainer}>
-          <View style={styles.scroll}>
-            <ScrollView
-              showsVerticalScrollIndicator={false}
-              style={styles.scroll}
-            >
-              <View style={styles.card}>
-                <Text style={styles.cardTitle}>Introducción</Text>
-                <Text style={styles.cardText}>
-                  Se sugiere un entrenamiento moderado de la fuerza muscular, evitando cargas elevadas, por la sensibilidad de las estructuras articulares especialmente durante la primera fase de recuperación.
-                </Text>
-              </View>
-              <View style={styles.card}>
-                <Text style={styles.cardTitle}>Ejercicio de fortalecimiento</Text>
-                <Text style={styles.cardText}>
-                  Los ejercicios de fortalecimiento son conocidos en el área de fisioterapia por hacerse por medio de actividades motoras siendo su finalidad el incremento de la fuerza de los músculos, estos se pueden hacer por medio de diferentes aparatos.
-                </Text>
-              </View>
-              <View style={styles.card}>
-                <Text style={styles.cardTitle}>Ejercicio de estiramiento</Text>
-                <Text style={styles.cardText}>
-                  Los ejercicios de estiramiento muscular son técnicas fundamentales en los programas de rehabilitación en el área de fisioterapia, teniendo como beneficio a los pacientes la amplitud de movimiento articular y la prevención de lesiones musculares al momento de realizar la terapia, se realizarán haciendo elongaciones de los músculos y de los tendones.
-                </Text>
-              </View>
-            </ScrollView>
-          </View>
+          <ScrollView
+            showsVerticalScrollIndicator={false}
+            style={styles.scroll}
+          >
+            <Card
+              title="Introducción"
+              text="Se sugiere un entrenamiento moderado de la fuerza muscular, evitando cargas elevadas, por la sensibilidad de las estructuras articulares especialmente durante la primera fase de recuperación."
+              isJustified
+            />
+            <Card
+              title="Recomendaciones"
+              text={[
+                "Durante el desarrollo de la terapia se debe vigilar la integridad de la piel, especialmente las zonas injertadas en caso de alteraciones sensitivas.",
+                "Al usuario se le debe enseñar a inspeccionar su piel después de cada sesión de ejercicio terapéutico y ajustar el tipo o la duración del ejercicio a la respuesta de cada uno de los sistemas",
+                "La implementación de un programa de ejercicios regular, inmediatamente después de que se supere el periodo crítico en una persona que ha presentado una quemadura, contribuye al desarrollo de la tolerancia cardiorrespiratoria o capacidad aeróbica, lo cual beneficia la ejecución de actividades funcionales y su calidad de vida.",
+                "En los niños se debe evitar entrenamientos de fuerza o resistencia de alta intensidad, la progresión del ejercicio de forma gradual y lenta para evitar la presencia de posibles lesiones y asegurar la adherencia de los niños al programa de ejercicios propuesto. ",
+                "Realizar reevaluaciones periódicas de la evolución del usuario frente al programa de ejercicios instaurado, pues de por si se requiere ajustes en la intensidad, duración, frecuencia o modo de ejecución.",
+                "Se puede acompañar el programa de ejercicios de actividades lúdicas y recreativas que fomenten mayor seguridad, disfrute y disminución de la tensión que tienden a provocar los ambientes hospitalarios y la ejecución de ejercicios de forma rutinaria.",
+                "Se debe educar a la persona con quemaduras, familia y cuidadores. Los efectos benéficos de un programa de ejercicios sobre su condición de salud y el establecimiento de estilos de vida saludables que permanezcan en el tiempo, depende en gran medida del apoyo de quienes le rodean."
+              ].join('\n\n● ')}
+              isJustified
+            />
+
+            <View style={{ marginBottom: 20 }}>
+              <ButtonGradient
+                text="Tipos de ejercicios"
+                onPress={() => navigation.navigate('Tipos de ejercicios terapéuticos')}
+              />
+            </View>
+          </ScrollView>
         </View>
       </ImageBackground>
     </View>
@@ -52,12 +58,12 @@ const TherapeuticExercise: FC<Props> = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    paddingTop: 20,
   },
   titleContainer: {
-    paddingTop: 30,
     alignItems: 'center',
-    marginBottom: 30
+    paddingBottom: 20,
   },
   title: {
     fontFamily: 'Poppins-Bold',
@@ -66,7 +72,8 @@ const styles = StyleSheet.create({
     color: '#FB0263'
   },
   contentContainer: {
-    paddingHorizontal: 25
+    paddingHorizontal: 25,
+    flex: 1
   },
   contentText: {
     fontFamily: 'Poppins-Regular',
@@ -76,27 +83,7 @@ const styles = StyleSheet.create({
     marginBottom: 20
   },
   scroll: {
-    width: '100%',
-    maxHeight: '96%'
-  },
-  card: {
-    backgroundColor: '#FFF',
-    borderRadius: 10,
-    padding: 15,
-    borderWidth: 1,
-    borderColor: 'rgba(0, 0, 0, 0.4)',
-    marginBottom: 20
-  },
-  cardTitle: {
-    fontFamily: 'Poppins-Bold',
-    fontSize: 18,
-    color: '#FB0263',
-    marginBottom: 10
-  },
-  cardText: {
-    fontFamily: 'Poppins-Regular',
-    fontSize: 17,
-    color: '#2E2F32'
+    flexGrow: 0
   }
 })
 

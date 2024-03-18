@@ -2,6 +2,7 @@ import ControlMonitoring from "src/screens/ControlAndMonitoring/ControlMonitorin
 import TherapeuticExercise from "src/screens/ControlAndMonitoring/TherapeuticExercise";
 import ScarManage from "src/screens/ControlAndMonitoring/ScarManage";
 import PainManage from "src/screens/ControlAndMonitoring/PainManage";
+import TypesTherapeutic from "src/screens/ControlAndMonitoring/TypesTherapeutic";
 
 
 export const ControlMonitoringRoutes = [
@@ -24,5 +25,10 @@ export const ControlMonitoringRoutes = [
     key: 'Pains',
     title: 'Manejo del dolor',
     component: PainManage
+  }, 
+  {
+    key: 'Types',
+    title: 'Tipos de ejercicios terapéuticos',
+    component: TypesTherapeutic
   }
 ]

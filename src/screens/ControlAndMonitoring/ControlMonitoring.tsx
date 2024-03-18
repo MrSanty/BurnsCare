@@ -28,7 +28,7 @@ const ControlMonitoring: FC<TypeOfBurnsProps> = ({ navigation }) => {
         </View>
         <View style={styles.contentContainer}>
           {
-            ControlMonitoringRoutes.slice(1).map(route => (
+            ControlMonitoringRoutes.slice(1, 4).map(route => (
               <ButtonGradient
                 key={route.key}
                 text={route.title}
