@@ -59,12 +59,11 @@ const PainManage: FC<Props> = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    paddingTop: 20
+    flex: 1
   },
   titleContainer: {
     alignItems: 'center',
-    paddingBottom: 20
+    paddingVertical: 20
   },
   title: {
     fontFamily: 'Poppins-Bold',
