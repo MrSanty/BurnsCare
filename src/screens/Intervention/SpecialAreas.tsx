@@ -1,8 +1,7 @@
-import { ActivityIndicator, Image, ImageBackground, Pressable, StyleSheet, Text, View } from 'react-native';
+import { ImageBackground, StyleSheet, Text, View } from 'react-native';
 import { ScrollView } from "react-native-gesture-handler";
 import Card from "src/components/Card";
 import Podcast from 'src/components/Podcast';
-import { usePodcast } from 'src/hooks/usePodcast';
 
 const SpecialAreas = () => {
   return (
@@ -68,8 +67,8 @@ const SpecialAreas = () => {
 
             <Card title='Plan de Egreso'>
               <Podcast 
-                url='https://audio.jukehost.co.uk/H8RMWfdpikFfgC9SfIdT1eqJHi8Rba88'
-                title='Podcast 2'
+                url='https://audio.jukehost.co.uk/EdVHT1AubBahDTsG3fFjNBgftk56vuXs'
+                title='Podcast 3'
                 artist='Anónimo'
               />
             </Card>

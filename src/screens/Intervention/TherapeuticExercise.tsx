@@ -3,6 +3,7 @@ import { ImageBackground, StyleSheet, Text, View } from 'react-native';
 import { ScrollView } from "react-native-gesture-handler";
 import ButtonGradient from "src/components/ButtonGradient";
 import Card from "src/components/Card";
+import Podcast from "src/components/Podcast";
 
 interface Props {
   navigation: any;
@@ -24,6 +25,13 @@ const TherapeuticExercise: FC<Props> = ({ navigation }) => {
             showsVerticalScrollIndicator={false}
             style={styles.scroll}
           >
+            <Card title='Podcast'>
+              <Podcast 
+                url='https://audio.jukehost.co.uk/H8RMWfdpikFfgC9SfIdT1eqJHi8Rba88'
+                title='Podcast 2'
+                artist='Anónimo'
+              />
+            </Card>
             <Card
               title="Introducción"
               text="Se sugiere un entrenamiento moderado de la fuerza muscular, evitando cargas elevadas, por la sensibilidad de las estructuras articulares especialmente durante la primera fase de recuperación."
