@@ -24,15 +24,31 @@ const AboutUs: FC<Props> = ({ navigation }) => {
             <Text style={styles.title}>INVESTIGADORES</Text>
           </View>
           <View style={styles.contentContainer}>
-            <CardUser name="Julialba Castellanos Ruiz" />
-            <CardUser name="Monica Yamile Pinzón Bernal" />
+            <CardUser
+              urlImage={require('src/assets/icons/icon.png')}
+              name="Julialba Castellanos Ruiz"
+            />
+            <CardUser
+              urlImage={require('src/assets/icons/icon.png')}
+              name="Monica Yamile Pinzón Bernal"
+            />
           </View>
           <View style={styles.titleContainer}>
             <Text style={styles.title}>DESARROLLADORES</Text>
           </View>
-          <View style={styles.contentContainer}>
-            <CardUser name="Carlos Andrés Zapata" />
-            <CardUser name="Santiago Quintero Rodriguez" />
+          <View style={styles.secondContainer}>
+            <CardUser
+              urlImage={require('src/assets/icons/icon.png')}
+              name="Carlos Andrés Zapata"
+              text="FullStack Developer"
+              fullWidth
+            />
+            <CardUser
+              urlImage={require('src/assets/images/Santiago.jpg')}
+              name="Santiago Quintero Rodriguez"
+              text="FullStack Developer"
+              fullWidth
+            />
           </View>
         </ScrollView>
       </ImageBackground>
@@ -56,8 +72,12 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 20
+  },
+  secondContainer: {
+    flexDirection: 'column',
     gap: 10,
-    flexWrap: 'wrap',
     paddingHorizontal: 25
   }
 })
