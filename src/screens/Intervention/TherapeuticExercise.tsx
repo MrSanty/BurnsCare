@@ -50,6 +50,14 @@ const TherapeuticExercise: FC<Props> = ({ navigation }) => {
               ].join('\n\n● ')}
               isJustified
             />
+            
+            <Card title='Plan de Egreso'>
+              <Podcast 
+                url='https://audio.jukehost.co.uk/EdVHT1AubBahDTsG3fFjNBgftk56vuXs'
+                title='Podcast 3'
+                artist='Anónimo'
+              />
+            </Card>
 
             <View style={{ marginBottom: 20 }}>
               <ButtonGradient

@@ -2,7 +2,6 @@ import { FC } from "react";
 import { ImageBackground, StyleSheet, Text, View } from 'react-native';
 import { ScrollView } from "react-native-gesture-handler";
 import Card from "src/components/Card";
-import { useNavigationChange } from 'src/hooks/useNavigationChange';
 
 interface Props {
   navigation: any;

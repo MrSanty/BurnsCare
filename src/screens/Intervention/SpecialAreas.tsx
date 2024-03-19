@@ -1,7 +1,6 @@
 import { ImageBackground, StyleSheet, Text, View } from 'react-native';
 import { ScrollView } from "react-native-gesture-handler";
 import Card from "src/components/Card";
-import Podcast from 'src/components/Podcast';
 
 const SpecialAreas = () => {
   return (
@@ -64,14 +63,6 @@ const SpecialAreas = () => {
               text="En las extremidades es común encontrar bridas, sindactilia, retracciones y deformidades de las articulaciones."
               isJustified
             />
-
-            <Card title='Plan de Egreso'>
-              <Podcast 
-                url='https://audio.jukehost.co.uk/EdVHT1AubBahDTsG3fFjNBgftk56vuXs'
-                title='Podcast 3'
-                artist='Anónimo'
-              />
-            </Card>
           </ScrollView>
         </View>
       </ImageBackground>
