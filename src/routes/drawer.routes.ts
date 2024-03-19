@@ -4,7 +4,7 @@ import Complications from "src/screens/Complications";
 import References from "src/screens/References";
 import InterestedPage from "src/screens/InterestedPage";
 import AboutUs from "src/screens/AboutUs";
-import StackControlMonitoring from "src/navigation/stack/StackControlMonitoring";
+import StackInterventionGuidelines from "src/navigation/stack/StackInterventionGuidelines";
 
 export const drawerRoutes: RouteDrawer[] = [
   {
@@ -22,9 +22,9 @@ export const drawerRoutes: RouteDrawer[] = [
   },
   {
     key: 3,
-    title: 'Control y seguimiento',
+    title: 'Pautas de intervención',
     children: null,
-    show: true
+    show: false
   },
   {
     key: 10,
@@ -61,8 +61,8 @@ export const drawerScreenRoutes: RouteDrwerScreen[] = [
   },
   {
     key: 3,
-    title: 'Control y seguimiento',
-    component: StackControlMonitoring,
+    title: 'Pautas de intervención',
+    component: StackInterventionGuidelines,
     showHeader: false
   },
   {

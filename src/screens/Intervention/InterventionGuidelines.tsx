@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { View, Text, StyleSheet, Image, Pressable } from 'react-native';
-import { ControlMonitoringRoutes } from 'src/routes/ControlMonitoring.routes';
+import { InterventionGuidelinesRoutes } from 'src/routes/InterventionGuidelines.routes';
 import { useNavigationChange } from 'src/hooks/useNavigationChange';
 import ButtonGradient from "src/components/ButtonGradient";
 
@@ -8,7 +8,7 @@ interface TypeOfBurnsProps {
   navigation: any;
 }
 
-const ControlMonitoring: FC<TypeOfBurnsProps> = ({ navigation }) => {
+const InterventionGuidelines: FC<TypeOfBurnsProps> = ({ navigation }) => {
   useNavigationChange(navigation, 3);
 
   return (
@@ -24,11 +24,11 @@ const ControlMonitoring: FC<TypeOfBurnsProps> = ({ navigation }) => {
 
       <View style={styles.card}>
         <View style={styles.cardTitle}>
-          <Text style={styles.title}>Recomendaciones</Text>
+          <Text style={styles.title}>Pautas de intervención</Text>
         </View>
         <View style={styles.contentContainer}>
           {
-            ControlMonitoringRoutes.slice(1, 4).map(route => (
+            InterventionGuidelinesRoutes.slice(1, 5).map(route => (
               <ButtonGradient
                 key={route.key}
                 text={route.title}
@@ -84,4 +84,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default ControlMonitoring;
+export default InterventionGuidelines;

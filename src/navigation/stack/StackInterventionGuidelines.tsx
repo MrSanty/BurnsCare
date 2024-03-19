@@ -1,11 +1,11 @@
-import { ControlMonitoringRoutes } from 'src/routes/ControlMonitoring.routes';
+import { InterventionGuidelinesRoutes } from 'src/routes/InterventionGuidelines.routes';
 import DrawerScreenHeader from 'src/components/DrawerScreenHeader';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
-const StackControlMonitoring = () => {
+const StackInterventionGuidelines = () => {
   return (
     <Navigator
       screenOptions={{
@@ -14,7 +14,7 @@ const StackControlMonitoring = () => {
       initialRouteName="Index"
     >
       {
-        ControlMonitoringRoutes.map((route) => (
+        InterventionGuidelinesRoutes.map((route) => (
           <Screen
             key={route.key}
             name={route.title}
@@ -25,4 +25,4 @@ const StackControlMonitoring = () => {
     </Navigator>
   );
 };
-export default StackControlMonitoring;
+export default StackInterventionGuidelines;
