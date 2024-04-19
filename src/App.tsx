@@ -26,7 +26,7 @@ const App = () => {
     <RouteContext.Provider value={{ currentRoute, setCurrentRoute }}>
       <NavigationContainer>
         <Navigator
-          initialRouteName="Introduction"
+          initialRouteName="Consent"
           screenOptions={{
             headerShown: false,
           }}
