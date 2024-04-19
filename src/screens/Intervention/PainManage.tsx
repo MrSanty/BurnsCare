@@ -45,7 +45,7 @@ const PainManage: FC<Props> = ({ navigation }) => {
               title="Electroterapia"
               text={[
                 "Estimulación eléctrica nerviosa transcutánea (TENS).",
-                "El uso de la TENS puede contribuir con el manejo del dolor en personas quemadas, se puede usar la estimulación eléctrica en el dolor agudo a nivel sensorial, en tanto actúa sobre la transmisión en la médula espinal, y por su efecto en la estimulación de la liberación de endorfinas en el tratamiento del dolor crónico.cuyos efectos y aplicaciones clínicas dependerán de la forma de la onda, la amplitud, la frecuencia, duración del pulso y tiempo de aplicación."
+                "El uso de la TENS puede contribuir con el manejo del dolor en personas quemadas, se puede usar la estimulación eléctrica en el dolor agudo a nivel sensorial, en tanto actúa sobre la transmisión en la médula espinal, y por su efecto en la estimulación de la liberación de endorfinas en el tratamiento del dolor crónico cuyos efectos y aplicaciones clínicas dependerán de la forma de la onda, la amplitud, la frecuencia, duración del pulso y tiempo de aplicación."
               ].join('\n\n')}
               isJustified
             />

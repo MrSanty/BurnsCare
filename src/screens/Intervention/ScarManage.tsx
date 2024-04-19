@@ -32,7 +32,7 @@ const ScarManage: FC<Props> = ({ navigation }) => {
 
               <Card title="Masaje cicatrizal">
                 <View style={{ height: 200 }}>
-                  <YoutubePlayer videoId="9k8c8JYJ2o8" />
+                  <YoutubePlayer videoId="7u8t_3NIcR0" />
                 </View>
               </Card>
 
@@ -42,9 +42,9 @@ const ScarManage: FC<Props> = ({ navigation }) => {
                     <Text
                       style={{ fontFamily: 'Poppins-Bold', fontSize: 17, color: '#2E2F32' }}
                     >
-                      Amasamiento
+                      Tecnica de amasamiento
                     </Text>
-                    <YoutubePlayer videoId="9k8c8JYJ2o8" />
+                    <YoutubePlayer videoId="0hpZUhzzIic" />
                   </View>
 
                   <View>
@@ -53,14 +53,14 @@ const ScarManage: FC<Props> = ({ navigation }) => {
                     >
                       Ortodérmicos
                     </Text>
-                    <YoutubePlayer videoId="9k8c8JYJ2o8" />
+                    <YoutubePlayer videoId="Gi1zkIHv7ak" />
                   </View>
                 </View>
               </Card>
 
               <Card title="Pellizcamiento">
                 <View style={{ height: 200 }}>
-                  <YoutubePlayer videoId="9k8c8JYJ2o8" />
+                  <YoutubePlayer videoId="BIBReyr5lpI" />
                 </View>
               </Card>
 
@@ -70,18 +70,18 @@ const ScarManage: FC<Props> = ({ navigation }) => {
                     <Text
                       style={{ fontFamily: 'Poppins-Bold', fontSize: 17, color: '#2E2F32' }}
                     >
-                      Amasamiento
+                      Presión 1
                     </Text>
-                    <YoutubePlayer videoId="9k8c8JYJ2o8" />
+                    <YoutubePlayer videoId="UBtDyQdQnvI" />
                   </View>
 
                   <View>
                     <Text
                       style={{ fontFamily: 'Poppins-Bold', fontSize: 17, color: '#2E2F32' }}
                     >
-                      Ortodérmicos
+                      Masajes con presión
                     </Text>
-                    <YoutubePlayer videoId="9k8c8JYJ2o8" />
+                    <YoutubePlayer videoId="MOfjRCckCLk" />
                   </View>
                 </View>
               </Card>
@@ -92,25 +92,19 @@ const ScarManage: FC<Props> = ({ navigation }) => {
                     <Text
                       style={{ fontFamily: 'Poppins-Bold', fontSize: 17, color: '#2E2F32' }}
                     >
-                      Amasamiento
+                      Vibración 1
                     </Text>
-                    <YoutubePlayer videoId="9k8c8JYJ2o8" />
+                    <YoutubePlayer videoId="IObe16v9MNY" />
                   </View>
 
                   <View>
                     <Text
                       style={{ fontFamily: 'Poppins-Bold', fontSize: 17, color: '#2E2F32' }}
                     >
-                      Ortodérmicos
+                      Vibración 2
                     </Text>
-                    <YoutubePlayer videoId="9k8c8JYJ2o8" />
+                    <YoutubePlayer videoId="xcnR1Qd7TVs" />
                   </View>
-                </View>
-              </Card>
-
-              <Card title="Amasamiento">
-                <View style={{ height: 200 }}>
-                  <YoutubePlayer videoId="9k8c8JYJ2o8" />
                 </View>
               </Card>
             </ScrollView>
@@ -137,7 +131,8 @@ const styles = StyleSheet.create({
     color: '#FB0263'
   },
   contentContainer: {
-    paddingHorizontal: 25
+    paddingHorizontal: 25,
+    flex: 1
   },
   contentText: {
     fontFamily: 'Poppins-Regular',
@@ -147,8 +142,7 @@ const styles = StyleSheet.create({
     marginBottom: 20
   },
   scroll: {
-    width: '100%',
-    maxHeight: '96%'
+    flexGrow: 0
   }
 })
 

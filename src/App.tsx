@@ -7,6 +7,7 @@ import { RouteContext } from 'src/context/RouteProvider';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import TrackPlayer from 'react-native-track-player';
+import Consent from './screens/Consent';
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -30,6 +31,7 @@ const App = () => {
             headerShown: false,
           }}
         >
+          <Screen name="Consent" component={Consent} />
           <Screen name="Introduction" component={Introduction} />
           <Screen name="Main" component={DrawerMenu} />
         </Navigator>

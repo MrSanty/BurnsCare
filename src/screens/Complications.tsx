@@ -33,7 +33,7 @@ const Complications: FC<Props> = ({ navigation }) => {
           <Text style={styles.title}>DE LAS QUEMADURAS</Text>
         </View>
 
-        <View style={styles.scroll}>
+        <View style={styles.contentContainer}>
           <ScrollView
             showsVerticalScrollIndicator={false}
             style={styles.scroll}
@@ -92,11 +92,10 @@ const styles = StyleSheet.create({
     minHeight: 25
   },
   contentContainer: {
-    alignItems: 'center'
+    flex: 1
   },
   scroll: {
-    width: '100%',
-    height: '43%'
+    flexGrow: 0
   },
   pressableButton: {
     alignItems: 'center',
