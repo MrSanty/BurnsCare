@@ -11,8 +11,7 @@ export const drawerRoutes: RouteDrawer[] = [
     key: 1,
     title: 'Inicio',
     children: null,
-    show: true,
-    
+    show: true
   },
   {
     key: 2,
@@ -41,6 +40,12 @@ export const drawerRoutes: RouteDrawer[] = [
   {
     key: 12,
     title: 'Acerca de',
+    children: null,
+    show: true
+  },
+  {
+    key: 13,
+    title: 'Salir',
     children: null,
     show: true
   }
@@ -82,5 +87,11 @@ export const drawerScreenRoutes: RouteDrwerScreen[] = [
     title: 'Acerca de',
     component: AboutUs,
     showHeader: true
+  },
+  {
+    key: 13,
+    title: 'Salir',
+    component: null,
+    showHeader: false
   }
 ]
