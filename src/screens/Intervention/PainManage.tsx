@@ -31,16 +31,23 @@ const PainManage: FC<Props> = ({ navigation }) => {
               ].join('\n\n')}
               isJustified
             />
-            <Card
-              title="Medios físicos"
-              text={[
-                "Técnicas de relajación.",
-                "Musicoterapia.",
-                "Fisioterapia dermatofuncional: Masaje cicatricial con diferentes modalidades.",
-                "Crioterapia: Fase aguda de la quemadura donde existe inflamación y dolor. Máximo 20 min, en áreas aledañas al área lesionada.",
-                "Termoterapia superficial: Fase subaguda. Paquete Caliente por 15 min. Tolerable al paciente."
-              ].join('\n● ')}
-            />
+            <Card title="Medios físicos">
+              <Text style={styles.textFisical}>
+                ● Técnicas de relajación.
+              </Text>
+              <Text style={styles.textFisical}>
+                ● Musicoterapia.
+              </Text>
+              <Text style={[styles.textFisical, { textAlign: 'left' }]}>
+                ● Fisioterapia dermatofuncional: Masaje cicatricial con diferentes modalidades.
+              </Text>
+              <Text style={styles.textFisical}>
+                ● Crioterapia: Fase aguda de la quemadura donde existe inflamación y dolor. Máximo 20 min, en áreas aledañas al área lesionada.
+              </Text>
+              <Text style={styles.textFisical}>
+                ● Termoterapia superficial: Fase subaguda. Paquete Caliente por 15 min. Tolerable al paciente.
+              </Text>
+            </Card>
             <Card
               title="Electroterapia"
               text={[
@@ -80,6 +87,12 @@ const styles = StyleSheet.create({
     textAlign: 'justify',
     color: '#2E2F32',
     marginBottom: 20
+  },
+  textFisical: {
+    fontFamily: 'Poppins-Regular',
+    fontSize: 17,
+    textAlign: 'justify',
+    color: '#2E2F32'
   },
   scroll: {
     flexGrow: 0
